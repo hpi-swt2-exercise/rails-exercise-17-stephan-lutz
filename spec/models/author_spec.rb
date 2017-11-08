@@ -1,10 +1,10 @@
-describe "Author", type: :model do
+require 'rails_helper'
 
-  it "should have a first name, last name and homepage" do
-    author = Author.new("Alan", "Turing", "http://wikipedia.org/Alan_Turing")
+RSpec.describe Author, type: :model do
+  it "should have a first name, last name and a homepage" do
+    author = FactoryGirl.create(:author)
     expect(author.first_name).to eq("Alan")
     expect(author.last_name).to eq("Turing")
     expect(author.homepage).to eq("http://wikipedia.org/Alan_Turing")
   end
-
 end
