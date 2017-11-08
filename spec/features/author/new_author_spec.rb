@@ -17,9 +17,9 @@ describe "New author page", type: :feature do
   it "should not error when submitting an author" do
     visit new_author_path
 
-    fill_in "first_name", :with => "Alan"
-    fill_in "last_name", :with => "Turing"
-    fill_in "homepage", :with => "http://wikipedia.de/Alan_Turing"
+    fill_in "First name", :with => "Alan"
+    fill_in "Last name", :with => "Turing"
+    fill_in "Homepage", :with => "http://wikipedia.de/Alan_Turing"
     find('input[type="submit"]').click
   end
 end
