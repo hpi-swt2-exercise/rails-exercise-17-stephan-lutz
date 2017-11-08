@@ -7,4 +7,9 @@ RSpec.describe Author, type: :model do
     expect(author.last_name).to eq("Turing")
     expect(author.homepage).to eq("http://wikipedia.org/Alan_Turing")
   end
+
+  it "should know its full name" do
+    author = FactoryGirl.create(:author)
+    expect(author.name).to eq("Alan Turing")
+  end
 end
