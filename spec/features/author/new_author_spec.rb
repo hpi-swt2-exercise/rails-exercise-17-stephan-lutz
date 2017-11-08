@@ -13,4 +13,13 @@ describe "New author page", type: :feature do
     expect(page).to have_field('Last name')
     expect(page).to have_field('Homepage')
   end
+
+  it "should not error when submitting an author" do
+    visit new_author_path
+
+    fill_in "first_name", :with => "Alan"
+    fill_in "last_name", :with => "Turing"
+    fill_in "homepage", :with => "http://wikipedia.de/Alan_Turing"
+    find('input[type="submit"]').click
+  end
 end
