@@ -1,14 +1,14 @@
 <h1>New Author</h1>
 
-<%= form_for :author, url: author_path do |f| %>
+<%= form_for :author, url: authors_path do |f| %>
   <p>
-    <%= f.label :"first name" %><br>
-    <%= f.text_field :"first name" %>
+    <%= f.label "First name" %><br>
+    <%= f.text_field :first_name %>
   </p>
  
   <p>
     <%= f.label :"last name" %><br>
-    <%= f.text_field :"last name" %>
+    <%= f.text_field :last_name %>
   </p>
 
   <p>

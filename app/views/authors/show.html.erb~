@@ -10,5 +10,5 @@
 
 <p>
   <strong>Homepage:</strong>
-  <%= @author.homepage %>
+  <%= @author.last_name %>
 </p>

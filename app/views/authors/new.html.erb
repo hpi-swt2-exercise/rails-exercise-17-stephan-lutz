@@ -2,17 +2,17 @@
 
 <%= form_for :author, url: authors_path do |f| %>
   <p>
-    <%= f.label :"first name" %><br>
-    <%= f.text_field :"first name" %>
+    <%= f.label "First Name" %><br>
+    <%= f.text_field :first_name %>
   </p>
  
   <p>
-    <%= f.label :"last name" %><br>
-    <%= f.text_field :"last name" %>
+    <%= f.label "Last Name" %><br>
+    <%= f.text_field :last_name %>
   </p>
 
   <p>
-    <%= f.label :homepage %><br>
+    <%= f.label "Homepage" %><br>
     <%= f.text_field :homepage %>
   </p>
 
