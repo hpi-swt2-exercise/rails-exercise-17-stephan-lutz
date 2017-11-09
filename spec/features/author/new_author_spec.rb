@@ -9,9 +9,9 @@ describe "New author page", type: :feature do
   it "should have text input for first name, last name, and homepage" do
     visit new_author_path
   
-    expect(page).to have_field(:author_first_name)
-    expect(page).to have_field(:author_last_name)
-    expect(page).to have_field(:author_homepage)
+    expect(page).to have_field('First name')
+    expect(page).to have_field('Last name')
+    expect(page).to have_field('Homepage')
   end
 
   it "should not error when submitting an author" do
