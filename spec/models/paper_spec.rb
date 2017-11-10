@@ -7,7 +7,7 @@ RSpec.describe Paper, type: :model do
   end
 
   it "should not validate without venue" do
-    paper = build(:paper, :year => nil)
+    paper = build(:paper, :venue => nil)
     expect(paper).not_to be_valid
   end
 end
