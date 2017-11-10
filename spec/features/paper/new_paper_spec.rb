@@ -7,7 +7,7 @@ describe "New paper page", type: :feature do
   end
 
   it "should have text input for title, venue and year" do
-    visit new_author_path
+    visit new_paper_path
   
     expect(page).to have_field('Title')
     expect(page).to have_field('Venue')
