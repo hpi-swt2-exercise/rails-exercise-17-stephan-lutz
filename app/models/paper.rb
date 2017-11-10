@@ -3,4 +3,5 @@ class Paper < ActiveRecord::Base
                     length: { minimum: 1 }
   validates :venue, presence: true,
                     length: { minimum: 1 }
+  validates :year, presence: true
 end
