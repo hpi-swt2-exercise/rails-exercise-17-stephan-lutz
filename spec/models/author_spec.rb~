@@ -12,4 +12,5 @@ RSpec.describe Author, type: :model do
     author = FactoryGirl.create(:author)
     expect(author.name).to eq("Alan Turing")
   end
+
 end

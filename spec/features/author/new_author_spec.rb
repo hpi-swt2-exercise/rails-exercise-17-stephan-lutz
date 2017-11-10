@@ -23,8 +23,4 @@ describe "New author page", type: :feature do
     find('input[type="submit"]').click
   end
 
-  it "should only accept authors with a last name" do
-    author = Author.create(first_name: "Alan", homepage: "http://wikipedia.org/Alan_Turing")
-    expect(author).not_to be_valid
-  end
 end
