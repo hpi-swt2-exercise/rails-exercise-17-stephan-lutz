@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Paper, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should not validate without title" do
+    paper = create(:paper, :title => nil)
+    expect(paper).to not_be(valid)
+  end
 end
