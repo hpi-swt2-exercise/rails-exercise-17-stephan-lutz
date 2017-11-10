@@ -1,6 +1,6 @@
 class Author < ActiveRecord::Base
   def name
-    first_name + " " + last_name
+    "#{first_name or ''} #{last_name or ''}"
   end
 
 end
