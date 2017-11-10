@@ -16,5 +16,12 @@ describe "Author index page", type: :feature do
     click_link 'Add author'
     expect(page).to have_current_path(new_author_path)
   end
+
+  it "should link to the author's page" do
+    FactoryGirl.create(:author).save
+    visit authors_path
+    click_link 'Show'
+    expect(page).to have_current_path(author_path)
+  end
   
 end
