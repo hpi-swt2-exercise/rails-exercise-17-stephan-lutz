@@ -1,7 +1,11 @@
 require 'rails_helper'
 
+def authorsMatching(author)
+  return Author.find_each(first_name: author.first_name, last_name: author.last_name, homepage: author.homepage)
+end
+
 describe "New author page", type: :feature do
-  
+
   it "should render withour error" do
     visit new_author_path
   end
@@ -14,13 +18,18 @@ describe "New author page", type: :feature do
     expect(page).to have_field('Homepage')
   end
 
-  it "should not error when submitting an author" do
+  it "should save an author" do
     visit new_author_path
 
-    fill_in "author_first_name", :with => "Alan"
-    fill_in "author_last_name", :with => "Turing"
-    fill_in "author_homepage", :with => "http://wikipedia.de/Alan_Turing"
+    author = build(:author)
+
+    expect(authorsMatching(author).size).to be 0
+    fill_in "author_first_name", :with => author.first_name
+    fill_in "author_last_name", :with => author.last_name
+    fill_in "author_homepage", :with => author.homepage
     find('input[type="submit"]').click
+
+    expect(authorsMatching(author).size).to be 1
   end
 
   it "should show validation errors" do

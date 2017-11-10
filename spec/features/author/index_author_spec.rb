@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+def authorsMatching(author)
+  return Author.find_each(first_name: author.first_name, last_name: author.last_name, homepage: author.homepage)
+end
+
 describe "Author index page", type: :feature do
   
   it "should render without error" do
@@ -29,5 +33,13 @@ describe "Author index page", type: :feature do
     visit authors_path
     click_link 'Edit'
     expect(page).to have_current_path(edit_author_path(author))
+  end
+
+  it "should have a link to delete an author" do
+    author = create(:author)
+    expect(authorsMatching(author).size).to be 1
+    visit authors_path
+    click_link 'Destroy'
+    expect(authorsMatching(author).size).to be 0
   end
 end
