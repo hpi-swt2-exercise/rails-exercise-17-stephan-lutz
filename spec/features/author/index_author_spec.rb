@@ -18,10 +18,11 @@ describe "Author index page", type: :feature do
   end
 
   it "should link to the author's page" do
-    FactoryGirl.create(:author).save
+    author = FactoryGirl.create(:author)
+    author.save
     visit authors_path
     click_link 'Show'
-    expect(page).to have_current_path(author_path)
+    expect(page).to have_current_path(author_path(author))
   end
   
 end
