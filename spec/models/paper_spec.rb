@@ -20,4 +20,9 @@ RSpec.describe Paper, type: :model do
     paper = build(:paper, :year => "nineteen-fifty")
     expect(paper).not_to be_valid
   end
+
+  it "should have and belong to many authors" do
+    paper = build(:paper)
+    expect(paper.authors).not_to be_empty
+  end
 end
