@@ -23,4 +23,14 @@ describe "New author page", type: :feature do
     find('input[type="submit"]').click
   end
 
+  it "should show validation errors" do
+    visit new_author_path
+
+    fill_in "author_first_name", :with => "Alan"
+    fill_in "author_last_name", :with => ""
+    fill_in "author_homepage", :with => "http://wikipedia.de/Alan_Turing"
+    find('input[type="submit"]').click
+
+    expect(page).to have_content("last name can't be blank")
+  end
 end
