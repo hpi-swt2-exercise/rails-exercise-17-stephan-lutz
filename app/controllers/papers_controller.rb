@@ -1,0 +1,4 @@
+class PapersController < ApplicationController
+
+
+end
